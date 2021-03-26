@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="nav" class="mx-10 sm:mx-0">
+      <Header />
+      <div class="mx-auto container">
+        <router-view />
+      </div>
+      <Footer />
     </div>
-    <router-view/>
   </div>
 </template>
+<script>
+import Header from './components/Header'
+import Footer from './components/Footer'
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+}
+</script>
 
 <style>
 #app {
@@ -16,8 +28,9 @@
   text-align: center;
   color: #2c3e50;
 }
-
 #nav {
+}
+/* #nav {
   padding: 30px;
 }
 
@@ -28,5 +41,5 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
